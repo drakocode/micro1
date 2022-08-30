@@ -1,0 +1,17 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888/
+  application:
+    name: catalogo-service
+  cloud:
+    config:
+      profile: ${profile:dev}
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3307/catalogo
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+
