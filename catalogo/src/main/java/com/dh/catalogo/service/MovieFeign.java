@@ -12,6 +12,6 @@ import java.util.List;
 @FeignClient(name="MOVIES-SERVICE")
 public interface MovieFeign {
 
-    @GetMapping("/catalog/{genre}")
+    @GetMapping("/catalogo/{genre}")
     ResponseEntity<List<MovieDTO>> pesquisarMovie(@PathVariable String genre);
 }
