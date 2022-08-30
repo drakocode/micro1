@@ -21,27 +21,12 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public Movie pesquisarPorId(Long id) {
-        return null;
-    }
-
-    @Override
     public Movie pesquisarPorGenre(String genre) {
         return null;
     }
 
-    @Override
-    public Movie pesquisarPorName(String name) {
-        return null;
-    }
-
-//    @Override
-//    public List<MovieDTO> pesquisarPorProprietario(Long idProprietario) {
-//        return repository.findByIdProprietario(idProprietario)
-//                .stream().map(this::entityToDTO).collect(Collectors.toList());
-//    }
 
     private MovieDTO entityToDTO(Movie entity) {
-        return MovieDTO.builder().name(entity.getName()).id(entity.getId()).build();
+        return MovieDTO.builder().name(entity.getName()).id(entity.getId()).genre(entity.getGenre()).urlStream(entity.getUrlStream()).build();
     }
 }

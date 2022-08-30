@@ -1,4 +1,4 @@
-package com.dh.movies;
+package com.dh.movies.controller;
 
 import com.dh.movies.dto.MovieDTO;
 import com.dh.movies.entity.Movie;
@@ -20,19 +20,9 @@ public class MovieController {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.salvar(dto));
     }
 
-    @GetMapping("/movie/{id}")
-    private ResponseEntity<Movie> pesquisarPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(service.pesquisarPorId(id));
+    @GetMapping("/movie/{genre}")
+    private ResponseEntity<Movie> pesquisarPorGenre(@PathVariable String genre) {
+        return ResponseEntity.ok(service.pesquisarPorGenre(genre));
     }
-//
-//    @GetMapping("/movie/{name}")
-//    private ResponseEntity<Movie> pesquisarPorName(@PathVariable String name) {
-//        return ResponseEntity.ok(service.pesquisarPorId(name));
-//    }
-//
-//    @GetMapping("/movie/{genre}")
-//    private ResponseEntity<Movie> pesquisarPorGenre(@PathVariable String genre) {
-//        return ResponseEntity.ok(service.pesquisarPorId(genre));
-//    }
 
 }
